@@ -1,7 +1,7 @@
 # FrontPessoasA
 
 - Projeto gerado usando [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
-- Esse projeto consome uma api desse projeto
+- Esse projeto consome uma api [API-PESSOAS-JERNEY](https://github.com/cassunde/api-pessoas-jersey)
 
 --
 
