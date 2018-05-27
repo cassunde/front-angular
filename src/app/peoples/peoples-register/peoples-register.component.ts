@@ -29,7 +29,6 @@ export class PeoplesRegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.par.params.subscribe(
-      (  params: any ) => { this.id = params.id; }
+    this.par.params.subscribe( (  params: any ) => { this.id = params.id; } );
   }
 }
