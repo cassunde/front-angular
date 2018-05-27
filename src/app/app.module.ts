@@ -1,16 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {  FormsModule } from '@angular/forms';
+import {  HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PeoplesModule } from './peoples/peoples.module';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { PeoplesService } from './peoples/peoples.service';
+import { PeoplesRegisterComponent } from './peoples/peoples-register/peoples-register.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    PeoplesModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    PeoplesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

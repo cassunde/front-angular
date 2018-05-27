@@ -1,0 +1,25 @@
+<p>
+  Lista Pessoas
+</p>
+<table class="table" >
+  <thead>
+    <tr>
+      <td>
+        Código
+      </td>
+      <td>
+        Nome
+      </td>
+      <td>
+        Ações
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let people of peoples">
+      <td>{{ people.id }}</td>
+      <td>{{ people.name }}</td>
+      <td>editar | Remover</td>
+    </tr>
+  </tbody>
+</table>
