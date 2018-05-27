@@ -1,5 +1,6 @@
 <p>
   Lista Pessoas
+  <button type="button" (click) = "newPeople()" class="btn btn-success" >Novo</button>  
 </p>
 <table class="table" >
   <thead>
@@ -19,7 +20,11 @@
     <tr *ngFor="let people of peoples">
       <td>{{ people.id }}</td>
       <td>{{ people.name }}</td>
-      <td>editar | Remover</td>
+      <td>
+          <button type="button" (click) = "edit(people.id)" class="btn btn-primary" >Editar</button>  
+           | 
+          <button type="button" (click) = "remove(people.id)" class="btn btn-danger" >Remover</button>  
+      </td>
     </tr>
   </tbody>
 </table>

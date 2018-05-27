@@ -1,36 +1,49 @@
-<section class="content">
-  
-  <form #form >
-      <input type="hidden" name="id" id="id">
-      <div class="col-md-12" >
-          <div class="col-md-6" >
-                {{id}}
+  <form class="form-group" >
+      <h3>Cadastro Pessoas</h3>
+      <input type="hidden" [value] = "people.id" (input) = "people.id = $event.target.value" >
+      <div class="form-row" >
+          <div class="col-4" >
               <label>Nome</label>          
               <input type="text"  class="form-control" [value] = "people.name" (input) = "people.name = $event.target.value">
             </div>
-          <div class="col-md-2" >
+          <div class="col-2" >
               <label>CPF</label>
               <input type="text" class="form-control" [value] = "people.cpf" (input) = "people.cpf = $event.target.value">
           </div>
-          <div class="col-md-6" >
+          <div class="col-3" >
               <label>Data de Nascimento</label>
               <input type="date" class="form-control" [value] = "people.dateBirth" (input) = "people.dateBirth = $event.target.value">
           </div>
-          <div class="col-md-6" >
+          <div class="col-md-3" >
               <label>email</label>
               <input type="email" class="form-control" [value] = "people.email" (input) = "people.email = $event.target.value">
             </div>
       </div>                          
       <button type="button" (click) = "salvar()" class="btn btn-primary" >Salvar</button>  
+      <button type="button" (click) = "done()" class="btn btn-success" >Finalizar</button>  
   </form>
-  <br>
-  
+  <hr>
+  <div>
+      <h5>Cadastro de Números</h5>
+      <input type="hidden" [value] = "numberSelected.id" (input) = "numberSelected.id = $event.target.value">
+      <div class="row" >
+          <div class="col-2" >
+            <label>DDD</label>          
+            <input type="text"  class="form-control" [value] = "numberSelected.ddd" (input) = "numberSelected.ddd = $event.target.value">
+          </div>
+          <div class="col-4" >
+              <label>Número</label>
+              <input type="text" class="form-control" [value] = "numberSelected.number" (input) = "numberSelected.number = $event.target.value">
+          </div>          
+          <br>
+          <div class="col-12" >
+              <button type="button" (click) = "salvarNumber()" class="btn btn-primary" >Salvar</button> 
+          </div>
+          
+  </div>
   <table class="table" >
     <thead>
-      <tr>
-        <td>
-          Código
-        </td>
+      <tr>        
         <td>
           ddd
         </td>
@@ -43,12 +56,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let people of peoples">
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
+      <tr *ngFor="let number of numbers">
+        <td>{{number.ddd}}</td>
+        <td>{{number.number}}</td>        
         <td>editar | Remover</td>
       </tr>
     </tbody>
   </table>
-</section>

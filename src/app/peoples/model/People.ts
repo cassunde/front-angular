@@ -4,4 +4,5 @@ export class People {
     cpf: String;
     email: String;
     dateBirth: String;
+    phones: any[];
 }

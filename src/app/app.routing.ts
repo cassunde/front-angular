@@ -9,7 +9,7 @@ const APP_ROUNTES: Routes = [
         component: PeoplesListComponent
     },
     {
-        path: 'new/:id',
+        path: 'edit/:id',
         component: PeoplesRegisterComponent
     },
     {

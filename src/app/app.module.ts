@@ -9,6 +9,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { PeoplesService } from './peoples/peoples.service';
 import { PeoplesRegisterComponent } from './peoples/peoples-register/peoples-register.component';
 import { routing } from './app.routing';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { routing } from './app.routing';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     FormsModule,
     HttpModule,
     PeoplesModule,

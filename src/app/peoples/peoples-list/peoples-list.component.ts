@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeoplesService } from '../peoples.service';
-import { People } from '../People';
+import { People } from '../model/People';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-peoples-list',
@@ -11,7 +12,7 @@ export class PeoplesListComponent implements OnInit {
 
   peoples: People[];
 
-  constructor(private peopleService: PeoplesService) {
+  constructor(private peopleService: PeoplesService, private router: Router) {
     this.updateList();
    }
 
@@ -19,6 +20,15 @@ export class PeoplesListComponent implements OnInit {
     this.peopleService.getPessoas().then( res => {
       this.peoples = res ;
     } );
+   }
+   newPeople(id: number) {
+    this.router.navigate([`/new`]);
+   }
+   edit(id: number) {
+    this.router.navigate([`/edit/${id}`]);
+   }
+   remove(id: number) {
+    this.peopleService.removePeople( id );
    }
   ngOnInit() {
   }
