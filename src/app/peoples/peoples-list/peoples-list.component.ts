@@ -31,6 +31,7 @@ export class PeoplesListComponent implements OnInit {
     this.peopleService.removePeople( id );
    }
   ngOnInit() {
+    console.log('acessa');
+    this.updateList();
   }
-
 }

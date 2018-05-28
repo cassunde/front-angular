@@ -32,8 +32,7 @@ export class PeoplesRegisterComponent implements OnInit {
   }
 
   salvar() {
-    this.service.savePeople(this.people);
-    this.done();
+    this.service.savePeople(this.people).then(res => this.done());
   }
 
   salvarNumber() {
@@ -45,24 +44,31 @@ export class PeoplesRegisterComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  createNumbresByPeople() {
+    const phones: any[] = this.people.phones;
+    for (const key in phones) {
+      if (phones.hasOwnProperty(key)) {
+        const item = phones[key];
+        const phone: PeopleNumber = new PeopleNumber();
+        phone.id = item.id;
+        phone.ddd = item.ddd;
+        phone.number = item.number;
+        phone.people = this.people.id;
+
+        this.numbers.push( phone );
+      }
+    }
+  }
+
   ngOnInit() {
     this.par.params.subscribe((  params: any ) => {
       this.id = params.id;
-      this.service.getPeople(this.id).then( res  =>  {
-        this.people = res ;
-        for (const key in res.phones) {
-          if (res.phones.hasOwnProperty(key)) {
-            const item = res.phones[key];
-            const phone: PeopleNumber = new PeopleNumber();
-            phone.id = item.id;
-            phone.ddd = item.ddd;
-            phone.number = item.number;
-            phone.people = res.id;
-
-            this.numbers.push( phone );
-          }
-        }
-      }  );
+      if (this.id !== undefined){
+        this.service.getPeople(this.id).then( res  =>  {
+          this.people = res ;
+          this.createNumbresByPeople();
+        }  );
+      }
     });
   }
 }
