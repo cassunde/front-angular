@@ -47,4 +47,13 @@ export class PeoplesService {
       return response.json() as PeopleNumber;
     });
   }
+
+  removeNumber(phone: PeopleNumber): Promise<People> {
+    const cabe = new Headers();
+    cabe.append('Content-Type', 'application/json');
+    return this.http.delete(`http://localhost:8080/cadastro-pessoas/service/peoples/${phone.people}/phones/${phone.id}`, { headers: cabe }).toPromise()
+    .then(response => {
+      return response.json() as People;
+    });
+  }
 }

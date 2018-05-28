@@ -40,11 +40,20 @@ export class PeoplesRegisterComponent implements OnInit {
     this.service.saveNumber(this.numberSelected).then( res => this.numbers.push( res ) );
   }
 
+  removeNumber( number: PeopleNumber ) {
+    this.service.removeNumber(number).then( res => {
+      this.people = res;
+      this.createNumbresByPeople();
+    } );
+  }
+
   done() {
     this.router.navigate(['']);
   }
 
   createNumbresByPeople() {
+    this.numbers = [];
+
     const phones: any[] = this.people.phones;
     for (const key in phones) {
       if (phones.hasOwnProperty(key)) {
@@ -63,7 +72,7 @@ export class PeoplesRegisterComponent implements OnInit {
   ngOnInit() {
     this.par.params.subscribe((  params: any ) => {
       this.id = params.id;
-      if (this.id !== undefined){
+      if (this.id !== undefined) {
         this.service.getPeople(this.id).then( res  =>  {
           this.people = res ;
           this.createNumbresByPeople();

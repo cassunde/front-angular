@@ -59,7 +59,7 @@
       <tr *ngFor="let number of numbers">
         <td>{{number.ddd}}</td>
         <td>{{number.number}}</td>        
-        <td>editar | Remover</td>
+        <td><button type="button" (click) = "removeNumber(number)" class="btn btn-danger" >Remover</button></td>
       </tr>
     </tbody>
   </table>
