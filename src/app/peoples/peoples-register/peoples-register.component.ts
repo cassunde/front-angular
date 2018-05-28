@@ -38,8 +38,7 @@ export class PeoplesRegisterComponent implements OnInit {
 
   salvarNumber() {
     this.numberSelected.people = this.people.id;
-    console.log(this.numberSelected);
-    this.service.saveNumber(this.numberSelected);
+    this.service.saveNumber(this.numberSelected).then( res => this.numbers.push( res ) );
   }
 
   done() {
