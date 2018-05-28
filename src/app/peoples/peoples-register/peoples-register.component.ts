@@ -13,6 +13,8 @@ import { PeopleNumber } from '../model/PeopleNumber';
 })
 export class PeoplesRegisterComponent implements OnInit {
 
+  public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+
   people: People = new People();
   numberSelected: PeopleNumber = new PeopleNumber();
   numbers: PeopleNumber[] = [];

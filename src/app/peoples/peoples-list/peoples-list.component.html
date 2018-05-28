@@ -12,6 +12,12 @@
         Nome
       </td>
       <td>
+        Idate
+      </td>
+      <td>
+        CPF
+      </td>
+      <td>
         Ações
       </td>
     </tr>
@@ -20,6 +26,8 @@
     <tr *ngFor="let people of peoples">
       <td>{{ people.id }}</td>
       <td>{{ people.name }}</td>
+      <td>{{ people.age }}</td>
+      <td>{{ people.cpf }}</td>
       <td>
           <button type="button" (click) = "edit(people.id)" class="btn btn-primary" >Editar</button>  
            | 
