@@ -1,21 +1,22 @@
-# FrontPessoasA
+# FrontAngular
 
-- Projeto gerado usando [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
-- Esse projeto consome uma api [API-PESSOAS-JERNEY](https://github.com/cassunde/api-pessoas-jersey)
+- This project usging [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+- This project consumer [API-JERNEY](https://github.com/cassunde/api-jersey)
 
 --
 
-Projeto tem o principal objetivo de explorar funcionalidade do angular em um escopo pequeno.
+This project have goal explore several features angular
 
-**Funcionalidades aplicadas**
+**Feature this project**
 
-- Cadastro de pessoas.
-- Alteraçao do cadastros de pessoas.
-- Exclusão do cadastro de pessoas.
+- Manager register of people.
+  - new people.
+  - change people.
+  - list peoples.
+  - remove people.
 
-Obs: cada pessoa pode ter uma lista de telefones.
 
-**Funcionalidades a serem aplicadas**
+**Future features**
 
-- Autenticação usando JWT
-- Autenticação usando OAuth
+- Authentication using JWT
+- Authentication using OAuth
