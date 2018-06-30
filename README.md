@@ -9,7 +9,7 @@ This project have goal explore several features angular
 
 **Feature this project**
 
-- Manager register of people.
+- Manager people register.
   - new people.
   - change people.
   - list peoples.
